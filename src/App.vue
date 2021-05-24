@@ -1,9 +1,10 @@
 <template>
   <top></top>
-  <bodyer></bodyer>
+  <Subject></Subject>
   <bottom></bottom>
   <div class="icp mdui-bottom-nav mdui-bottom-nav-text-auto">
-    <a class="mdui-ripple" href="https://beian.miit.gov.cn/">冀ICP备2021010559号</a>
+<!--    <a class="mdui-ripple" href="https://beian.miit.gov.cn/">{{ "备案号" }}</a>-->
+<!--    备案号码-->
     <a class="mdui-ripple" href="https://gitee.com/ToSimplZ/blog">GitHub</a>
     <a class="mdui-ripple" href="https://www.mdui.org/">MDUI</a>
   </div>
@@ -12,13 +13,13 @@
 <script>
 import bottom from './components/boteem.vue'
 import top from './components/top.vue'
-import bodyer from './components/bodyer.vue'
+import Subject from './components/Subject.vue'
 export default {
   name: 'App',
   components: {
     top,
     bottom,
-    bodyer
+    Subject
   }
 }
 </script>

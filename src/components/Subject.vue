@@ -6,14 +6,15 @@
             <a href="https://gitee.com/ToSimplZ"><button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">add</i></button></a>
           </div>
         </div>
-        <h1 class="doc-title mdui-text-color-theme name">GaoXuShenG</h1>
+<!--        <h1 class="doc-title mdui-text-color-theme name">{{ "name" }}</h1>-->
+<!--        上面是个人id标签-->
       </div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'bottom',
+  name: 'Subject',
   props: {
     msg: String
   }
