@@ -6,6 +6,7 @@
             <a href="https://gitee.com/ToSimplZ"><button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">add</i></button></a>
           </div>
         </div>
+        <h1 class="doc-title mdui-text-color-theme name">GaoXuShenG</h1>
       </div>
     </div>
 </template>
@@ -19,6 +20,11 @@ export default {
 }
 </script>
 <style lang="scss">
+.name{
+  text-align: center;
+  position: relative;
+  top: 20%;
+}
 .add{
   top: 75px;
   left: 75px;
@@ -35,13 +41,13 @@ export default {
   width: 100px;
   height: 100px;
   background-size: 100px;
-  background-image: url("../assets/portrait.png");
+  background-image: url("../assets/portrait.jpg");
   position: relative;
   margin: auto auto;
   top: 20%;
 }
 .mdui-ripple div.bg-img{
-  height: 480px;
+  height: 750px;
   background-image: url("../assets/bg.jpg");
 }
 </style>
