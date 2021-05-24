@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <top></top>
+  <bodyer></bodyer>
+  <bottom></bottom>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import bottom from './components/boteem.vue'
+import top from './components/top.vue'
+import bodyer from './components/bodyer.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    top,
+    bottom,
+    bodyer
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+}
+a:link    {color: rgba(0, 0, 0, 1);}
+a:visited {color: rgba(0, 0, 0, 1);}
+a:hover   {color: rgba(0, 0, 0, 1);}
+a:active  {color: rgba(0, 0, 0, 1);}
+
+body{
+  height: 3000px;
+  background-repeat: no-repeat;
+  //background-image: url("./assets/body.png");
 }
 </style>
