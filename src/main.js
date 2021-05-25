@@ -18,5 +18,9 @@ axios.get('http://127.0.0.1/admin').then((res) => {
   store.state.portrait = res.data.data.portrait
   //  个人头像地址
   store.state.background = res.data.data.background
+  axios.get('http://127.0.0.1/data').then((res) => {
+    store.state.data = res.data
+    store.state.textId = res.data[0].id
+  })
 })
 createApp(App).use(store).mount('#app')

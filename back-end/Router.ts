@@ -2,17 +2,15 @@ const connection = require('./mysql.ts')
 const express = require('express')
 const Router = express.Router()
 Router.get('/data', function (req, res) {
-  connection.query('SELECT * FROM `blog`.`article`', (err, back) => {
+  connection.query('SELECT * FROM `blog`.`article` ORDER BY `id` DESC', (err, back) => {
     if (err) {
       console.log(err)
     }
-    res.send({
-      data: {
-        id: back[0].id,
-        h1: back[0].h1,
-        msg: back[0].data
-      }
-    })
+    // const arr = {}
+    // for (let i = 0; i < back[0].id; i++) {
+    //   arr['id' + back[i].id] = back[i]
+    // }
+    res.send(back)
   })
 })
 Router.get('/admin', (req, res) => {

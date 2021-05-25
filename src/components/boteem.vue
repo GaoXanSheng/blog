@@ -9,9 +9,11 @@
         <p>Thaumaturgy... which giveth certain order to make strange works, of the sense to be perceived and of men greatly to be wondered at.MathematicallPraeface.</p>
         <footer>John Dee(1570) ——《Euclid's Elements》</footer>
       </blockquote>
-      <div v-for="i in 1" :key="i" class="msg">
-        Material Design代表了一种简洁的艺术，我很喜欢这种艺术，我希望你们也能喜欢。
+      <div class="mdui-typo" v-for="i in this.$store.state.textId" :key="i">
+        <h1>{{ this.$store.state.data[i-1].h1 }}</h1>
+        <p>{{ this.$store.state.data[i-1].data }}</p>
       </div>
+      <div class="bottom"></div>
     </div>
   </div>
 </template>
@@ -25,7 +27,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.msg {
+.bottom {
 margin-bottom: 400px;
 }
 </style>

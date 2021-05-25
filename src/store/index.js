@@ -8,7 +8,9 @@ export default createStore({
     title: '',
     background: '',
     logo: '',
-    portrait: ''
+    portrait: '',
+    textId: '',
+    data: ''
   },
   mutations: {
   },
