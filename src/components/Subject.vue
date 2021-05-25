@@ -1,7 +1,7 @@
 <template>
     <div class="mdui-ripple">
-      <div class="mdui-img-fluid bg-img" :style="bgImg">
-        <div class="portrait mdui-img-circle" :style="portrait">
+      <div class="mdui-img-fluid bg-img">
+        <div class="portrait mdui-img-circle">
           <div class="add">
             <a :href="this.$store.state.github">
               <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
@@ -60,8 +60,10 @@ export default {
   position: relative;
   margin: auto auto;
   top: 20%;
+  background-image: url("../assets/portrait.jpg");
 }
 .mdui-ripple div.bg-img{
   height: 750px;
+  background-image: url("../assets/bg.jpg");
 }
 </style>
