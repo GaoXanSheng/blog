@@ -3,9 +3,9 @@
   <Subject></Subject>
   <bottom></bottom>
   <div class="icp mdui-bottom-nav mdui-bottom-nav-text-auto">
-<!--    <a class="mdui-ripple" href="https://beian.miit.gov.cn/">{{ "备案号" }}</a>-->
+    <a class="mdui-ripple" href="https://beian.miit.gov.cn/">{{ this.$store.state.puTonFile }}</a>
 <!--    备案号码-->
-    <a class="mdui-ripple" href="https://gitee.com/ToSimplZ/blog">GitHub</a>
+    <a class="mdui-ripple" :href="this.$store.state.github">GitHub</a>
     <a class="mdui-ripple" href="https://www.mdui.org/">MDUI</a>
   </div>
 </template>
@@ -20,6 +20,10 @@ export default {
     top,
     bottom,
     Subject
+  },
+  data: function () {
+    return {
+    }
   }
 }
 </script>

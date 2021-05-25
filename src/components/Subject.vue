@@ -1,22 +1,37 @@
 <template>
     <div class="mdui-ripple">
-      <div class="mdui-img-fluid bg-img">
-        <div class="portrait mdui-img-circle">
+      <div class="mdui-img-fluid bg-img" :style="bgImg">
+        <div class="portrait mdui-img-circle" :style="portrait">
           <div class="add">
-            <a href="https://gitee.com/ToSimplZ"><button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">add</i></button></a>
+            <a :href="this.$store.state.github">
+              <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
+                <i class="mdui-icon material-icons">add</i>
+              </button>
+            </a>
           </div>
         </div>
-<!--        <h1 class="doc-title mdui-text-color-theme name">{{ "name" }}</h1>-->
+        <h1 class="doc-title mdui-text-color-theme name">{{ this.$store.state.name }}</h1>
 <!--        上面是个人id标签-->
       </div>
     </div>
 </template>
 
 <script>
+
 export default {
   name: 'Subject',
   props: {
     msg: String
+  },
+  data: function () {
+    return {
+      portrait: {
+        backgroundImage: 'url(' + this.$store.state.portrait + ')'
+      },
+      bgImg: {
+        backgroundImage: 'url(' + this.$store.state.background + ')'
+      }
+    }
   }
 }
 </script>
@@ -42,13 +57,11 @@ export default {
   width: 100px;
   height: 100px;
   background-size: 100px;
-  background-image: url("../assets/portrait.jpg");
   position: relative;
   margin: auto auto;
   top: 20%;
 }
 .mdui-ripple div.bg-img{
   height: 750px;
-  background-image: url("../assets/bg.jpg");
 }
 </style>
