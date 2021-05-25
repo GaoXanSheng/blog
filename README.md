@@ -1,5 +1,7 @@
 # blog
 
+体验站点 >[blog (yunmouren.top)](http://www.yunmouren.top/)
+
 ## Project setup
 ```
 yarn install
@@ -15,10 +17,9 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
+### NODE 
 ```
-yarn lint
+CD back-end
+NODE app.ts
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
