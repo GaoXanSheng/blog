@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
   database: 'blog'
 })
 setInterval(() => {
-  connection.query('', (err) => {
+  connection.query('SELECT * FROM article', (err) => {
     if (err) {
       console.log(err)
     }
