@@ -6,10 +6,6 @@ Router.get('/data', function (req, res) {
     if (err) {
       console.log(err)
     }
-    // const arr = {}
-    // for (let i = 0; i < back[0].id; i++) {
-    //   arr['id' + back[i].id] = back[i]
-    // }
     res.send(back)
   })
 })

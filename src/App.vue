@@ -42,8 +42,6 @@ a:hover   {color: rgba(0, 0, 0, 1);}
 a:active  {color: rgba(0, 0, 0, 1);}
 
 body{
-
   background-repeat: no-repeat;
-  //background-image: url("./assets/body.png");
 }
 </style>

@@ -6,5 +6,11 @@ const connection = mysql.createConnection({
   port: '3306',
   database: 'blog'
 })
-
+setInterval(() => {
+  connection.query('', (err) => {
+    if (err) {
+      console.log(err)
+    }
+  })
+}, 30000)
 module.exports = connection

@@ -64,6 +64,14 @@ export default {
 }
 .mdui-ripple div.bg-img{
   height: 750px;
-  background-image: url("../assets/bg.jpg");
+  background-size: 100%;
+  background-image: url("../assets/m-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media(min-width:700px){
+  .mdui-ripple div.bg-img{
+    background-image: url("../assets/bg.jpg");
+  }
 }
 </style>
