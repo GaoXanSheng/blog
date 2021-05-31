@@ -14,7 +14,7 @@ app.all('*', function (req, res, next) {
   else { next() }
 })
 app.use('/', Router)
-const port = 80
+const port:Number = 80
 app.listen(port, () => {
   console.log('server ON ' + port)
 })
