@@ -1,41 +1,36 @@
+<script lang="ts">
+
+export default {
+  name: 'PictureHeader',
+  props: {
+    msg: String
+  },
+  data(){
+    return {
+      name:"GaoXuShenG"
+    }
+  }
+}
+</script>
 <template>
     <div class="mdui-ripple">
       <div class="mdui-img-fluid bg-img">
         <div class="portrait mdui-img-circle">
           <div class="add">
-            <a :href="this.$store.state.github">
+            <a href="#">
               <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
                 <i class="mdui-icon material-icons">add</i>
               </button>
             </a>
           </div>
         </div>
-        <h1 class="doc-title mdui-text-color-theme name">{{ this.$store.state.name }}</h1>
-<!--        上面是个人id标签-->
+        <h1 class="doc-title mdui-text-color-theme name">{{this.name}}</h1>
       </div>
     </div>
 </template>
 
-<script>
 
-export default {
-  name: 'Subject',
-  props: {
-    msg: String
-  },
-  data: function () {
-    return {
-      portrait: {
-        backgroundImage: 'url(' + this.$store.state.portrait + ')'
-      },
-      bgImg: {
-        backgroundImage: 'url(' + this.$store.state.background + ')'
-      }
-    }
-  }
-}
-</script>
-<style lang="scss">
+<style>
 .name{
   text-align: center;
   position: relative;
@@ -48,9 +43,8 @@ export default {
   width: 30px;
   height: 30px;
   border-radius: 50px;
-
 }
-.add button{
+.add>button{
   background-color: #ff4081;
 }
 .portrait{
@@ -62,12 +56,9 @@ export default {
   top: 20%;
   background-image: url("../assets/portrait.jpg");
 }
-.mdui-ripple div.bg-img{
-  height: 750px;
-  background-size: 100%;
-  background-image: url("../assets/m-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+.mdui-ripple>div.bg-img{
+  height: 770px;
+  background: url("../assets/m-bg.jpg") center center / cover;
 }
 @media(min-width:700px){
   .mdui-ripple div.bg-img{

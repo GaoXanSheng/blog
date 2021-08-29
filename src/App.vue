@@ -1,47 +1,21 @@
-<template>
-  <top></top>
-  <Subject></Subject>
-  <bottom></bottom>
-  <div class="icp mdui-bottom-nav mdui-bottom-nav-text-auto">
-    <a class="mdui-ripple" href="https://beian.miit.gov.cn/">{{ this.$store.state.puTonFile }}</a>
-<!--    备案号码-->
-    <a class="mdui-ripple" :href="this.$store.state.github">GitHub</a>
-    <a class="mdui-ripple" href="https://www.mdui.org/">MDUI</a>
-  </div>
-</template>
-
-<script>
-import bottom from './components/boteem.vue'
-import top from './components/top.vue'
-import Subject from './components/Subject.vue'
-export default {
-  name: 'App',
-  components: {
-    top,
-    bottom,
-    Subject
-  },
-  data: function () {
-    return {
-    }
-  }
-}
+<script setup lang="ts">
+import PictureHeader from './components/Picture_header.vue'
+import Information from './components/Information.vue'
+import BottomNavigationBar from "./components/BottomNavigationBar.vue";
 </script>
 
-<style lang="scss">
-.icp{
-  text-align: center;
-}
-*{
-  margin: 0;
-  padding: 0;
-}
-a:link    {color: rgba(0, 0, 0, 1);}
-a:visited {color: rgba(0, 0, 0, 1);}
-a:hover   {color: rgba(0, 0, 0, 1);}
-a:active  {color: rgba(0, 0, 0, 1);}
+<template>
+  <PictureHeader></PictureHeader>
+  <Information></Information>
+  <BottomNavigationBar></BottomNavigationBar>
 
-body{
+</template>
+
+<style>
+a:active, a:hover, a:link, a:visited {
+  color: #000;
+}
+body {
   background-repeat: no-repeat;
 }
 </style>

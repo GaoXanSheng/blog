@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "node serve": "node app.ts"
-  },
-  "dependencies": {
-    "mysql2": "^2.2.5"
-  }
-}

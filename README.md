@@ -2,24 +2,19 @@
 
 体验站点 >[blog (yunmouren.top)](http://www.yunmouren.top/)
 
-## Project setup
+## 安装依赖
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+yarn
 ```
 
-### Compiles and minifies for production
+### 启动项目
 ```
-yarn build
+yarn run
 ```
 
-### NODE 
+### 后端NODE启动 
 ```
 CD back-end
-NODE app.ts
+npm run serve
 ```
 
