@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "node serve": "node app.js"
+  },
+  "dependencies": {
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
