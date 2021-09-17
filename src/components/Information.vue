@@ -1,4 +1,5 @@
 <script lang="ts">
+import axios from "axios";
 export default {
   name: 'information',
   props: {
@@ -6,10 +7,18 @@ export default {
   },
   data(){
     return {
-      computerFile:"computerFile"
+      computerFile:"",
     }
+  },
+  mounted() {
+    this.$nextTick(function () {
+        axios.get('http://www.yunmouren.top:8000/data').then(res=>{
+          this.$data.computerFile = res.data
+        })
+    })
   }
 }
+const data:number =0
 </script>
 <template>
   <div class="mdui-container doc-container">
@@ -22,10 +31,10 @@ export default {
         <p>Thaumaturgy... which giveth certain order to make strange works, of the sense to be perceived and of men greatly to be wondered at.MathematicallPraeface.</p>
         <footer>John Dee(1570) ——《Euclid's Elements》</footer>
       </blockquote>
-      <div class="mdui-typo" v-for="i in 1" :key="i">
+      <div class="mdui-typo" v-for="i in computerFile" :key="i">
 
-        <h1>{{this.$data.computerFile}}</h1>
-        <p>每一个function的作用下，cpu都会吃到负载，耗电量的提升，带来全球变暖的显著变化，你们的每个子子孙孙的后代会毁在你们的每一个function中，现在开始禁用javascript，绿色环保，为未来的地球做出贡献。</p>
+        <h1>{{i.title}}</h1>
+        <p>{{i.data}}</p>
 
       </div>
       <div class="bottom"></div>

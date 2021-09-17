@@ -1,5 +1,5 @@
 <script lang="ts">
-
+import axios from "axios";
 export default {
   name: 'PictureHeader',
   props: {
@@ -9,6 +9,13 @@ export default {
     return {
       name:"GaoXuShenG"
     }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      axios.get('http://www.yunmouren.top:8000/admin').then(res=>{
+        this.$data.name = res.data.data.name
+      })
+    })
   }
 }
 </script>
@@ -24,7 +31,7 @@ export default {
             </a>
           </div>
         </div>
-        <h1 class="doc-title mdui-text-color-theme name">{{this.name}}</h1>
+        <h1 class="doc-title mdui-text-color-theme name">{{this.$data.name}}</h1>
       </div>
     </div>
 </template>
