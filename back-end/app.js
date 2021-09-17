@@ -14,10 +14,11 @@ if (conf.https === true) {
 }
 const port = Number(conf.Serve_Port)
 
-app.use(express.json())
-// json解析
 app.use(cors())
 // 跨域
+app.use(express.json())
+// json解析
+
 app.use('/', Router)
 if (httpsOption == null) {
     app.listen(port, () => {

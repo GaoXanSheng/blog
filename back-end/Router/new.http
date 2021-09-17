@@ -1,12 +1,25 @@
 GET http://localhost:80/data
 Accept: application/json
 
-###
-POST http://localhost:80/admin
-Accept: application/json
+### 得到cookie
+POST http://localhost/admin
+Content-Type: application/json
 
 {
-  "name": 999,
-  "passworld": "content"
+  "name": "admin",
+  "password": 123456
 }
-###
+### 失败的请求
+POST http://localhost/admin
+Content-Type: application/json
+
+{
+  "name": "admin"
+}
+### 解密token
+POST http://localhost/token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6MTIzNDU2LCJpYXQiOjE2MzE4NzYzNzJ9.i2fEhG9IQHDQz0xjf6hL3uygxSTKYqC7Q_zwAr5z3-Y"
+}

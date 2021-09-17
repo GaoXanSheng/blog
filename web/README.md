@@ -7,14 +7,7 @@
 yarn
 ```
 
-### 启动项目
+### 打包项目
 ```
-yarn run
+yarn build
 ```
-
-### 后端NODE启动 
-```
-CD back-end
-npm run serve
-```
-
