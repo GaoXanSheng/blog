@@ -1,0 +1,9 @@
+{
+  "https": false,
+  "Serve_Port":80,
+  "Sql_Serve_Url": "localhost",
+  "Sql_Server_Port":3306,
+  "Sql_Server_Database": "blog",
+  "Sql_Server_UserName": "root",
+  "Sql_Server_Password": ""
+}

@@ -1,19 +1,30 @@
 const express = require('express')
-const Router = require('./Router.js')
+const Router = require('./Router/index')
+const cors = require('cors')
 const app = express()
-app.all('*', function (req, res, next) {
-  // 设置允许跨域的域名，*代表允许任意域名跨域
-  res.header('Access-Control-Allow-Origin', '*')
-  // 允许的header类型
-  res.header('Access-Control-Allow-Headers', 'content-type')
-  // 跨域允许的请求方式
-  res.header('Access-Control-Allow-Methods', 'DELETE,PUT,POST,GET,OPTIONS')
-  // eslint-disable-next-line brace-style,eqeqeq
-  if (req.method.toLowerCase() == 'options') { res.send(200) } // 让options尝试请求快速结束
-  else { next() }
-})
+const https = require('https')
+const fs = require('fs')
+let httpsOption = null
+let conf = require("./conf.json")
+if (conf.https === true) {
+    httpsOption = {
+        key: fs.readFileSync('https.key'),
+        cert: fs.readFileSync('https.pem')
+    }
+}
+const port = Number(conf.Serve_Port)
+
+app.use(express.json())
+// json解析
+app.use(cors())
+// 跨域
 app.use('/', Router)
-const port = 80
-app.listen(port, () => {
-  console.log('server ON ' + port)
-})
+if (httpsOption == null) {
+    app.listen(port, () => {
+        console.log(`启动成功在端口:${port}`)
+    })
+} else {
+    https.createServer(httpsOption, app).listen(port, () => {
+        console.log(`启动成功在端口:${port},并启动了https服务`)
+    });
+}

@@ -1,0 +1,12 @@
+GET http://localhost:80/data
+Accept: application/json
+
+###
+POST http://localhost:80/admin
+Accept: application/json
+
+{
+  "name": 999,
+  "passworld": "content"
+}
+###

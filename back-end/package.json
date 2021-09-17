@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "node serve": "node app.js"
+    "serve": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
