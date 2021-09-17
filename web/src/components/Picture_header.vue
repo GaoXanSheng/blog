@@ -13,7 +13,7 @@ export default {
   mounted() {
     this.$nextTick(function () {
       axios.get('http://www.yunmouren.top:8000/admin').then(res=>{
-        this.$data.name = res.data.data.name
+        this.$data.name = res.data.data
       })
     })
   }
@@ -24,14 +24,14 @@ export default {
       <div class="mdui-img-fluid bg-img">
         <div class="portrait mdui-img-circle">
           <div class="add">
-            <a href="#">
-              <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
+            <a :href="this.$data.name.github">
+              <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple " style="background-color: #ff4081">
                 <i class="mdui-icon material-icons">add</i>
               </button>
             </a>
           </div>
         </div>
-        <h1 class="doc-title mdui-text-color-theme name">{{this.$data.name}}</h1>
+        <h1 class="doc-title mdui-text-color-theme name">{{this.$data.name.name}}</h1>
       </div>
     </div>
 </template>
