@@ -1,25 +1,47 @@
 GET http://localhost:80/data
 Accept: application/json
 
-### 得到cookie
-POST http://localhost/admin
-Content-Type: application/json
-
-{
-  "name": "admin",
-  "password": 123456
-}
-### 失败的请求
-POST http://localhost/admin
-Content-Type: application/json
-
-{
-  "name": "admin"
-}
-### 解密token
+### 得到token
 POST http://localhost/token
 Content-Type: application/json
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6MTIzNDU2LCJpYXQiOjE2MzE4NzYzNzJ9.i2fEhG9IQHDQz0xjf6hL3uygxSTKYqC7Q_zwAr5z3-Y"
+  "name": "admin",
+  "password": "admin"
+}
+### 提交文章
+POST http://localhost/article
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaWF0IjoxNjMyOTYxNDA4fQ.xbR7T9Ll2wJy8S08CvbvsFlyauMhAs-z0gcZ2IFUnCE",
+  "title": "aaaaa",
+  "article": "baabb"
+}
+### 管理文章
+POST http://localhost/manage
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaWF0IjoxNjMyOTYxNDA4fQ.xbR7T9Ll2wJy8S08CvbvsFlyauMhAs-z0gcZ2IFUnCE",
+  "title": "wd",
+  "id": 1
+}
+
+### Admin 解密
+POST http://localhost/admin
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaWF0IjoxNjMyOTYxNDA4fQ.xbR7T9Ll2wJy8S08CvbvsFlyauMhAs-z0gcZ2IFUnCE"
+}
+### 更新
+POST http://localhost/update
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiaWF0IjoxNjMyOTYxNDA4fQ.xbR7T9Ll2wJy8S08CvbvsFlyauMhAs-z0gcZ2IFUnCE",
+  "puTonFile": "puTonFile",
+  "name": "name",
+  "github": "github"
 }

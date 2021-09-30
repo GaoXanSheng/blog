@@ -1,5 +1,5 @@
 <script lang="ts">
-import axios from "axios";
+import instance from '../api/index'
 export default {
   name: 'information',
   props: {
@@ -12,9 +12,9 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
-        axios.get('http://www.yunmouren.top:8000/data').then(res=>{
-          this.$data.computerFile = res.data
-        })
+      instance.instance.get('/data').then(res=>{
+        this.computerFile = res.data
+      })
     })
   }
 }
@@ -32,10 +32,10 @@ const data:number =0
         <footer>John Dee(1570) ——《Euclid's Elements》</footer>
       </blockquote>
       <div class="mdui-typo" v-for="i in computerFile" :key="i">
-
-        <h1>{{i.title}}</h1>
-        <p>{{i.data}}</p>
-
+        <div v-if="i">
+          <h1>{{i.h1}}</h1>
+          <p>{{i.data}}</p>
+        </div>
       </div>
       <div class="bottom"></div>
     </div>

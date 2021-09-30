@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import PictureHeader from './components/Picture_header.vue'
-import Information from './components/Information.vue'
-import BottomNavigationBar from "./components/BottomNavigationBar.vue";
+
 </script>
 
 <template>
-  <PictureHeader></PictureHeader>
-  <Information></Information>
-  <BottomNavigationBar></BottomNavigationBar>
-
+  <router-view></router-view>
 </template>
 
 <style>
@@ -17,5 +12,9 @@ a:active, a:hover, a:link, a:visited {
 }
 body {
   background-repeat: no-repeat;
+  background-color: #f4f5f5;
+}
+div{
+ cursor:default
 }
 </style>

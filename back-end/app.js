@@ -6,20 +6,21 @@ const https = require('https')
 const fs = require('fs')
 let httpsOption = null
 let conf = require("./conf.json")
-if (conf.https === true) {
+if (conf.https) {
     httpsOption = {
         key: fs.readFileSync('https.key'),
         cert: fs.readFileSync('https.pem')
     }
 }
 const port = Number(conf.Serve_Port)
+if (conf.Cross_domain)app.use(cors());
 
-app.use(cors())
 // 跨域
 app.use(express.json())
 // json解析
 
 app.use('/', Router)
+//路由更改
 if (httpsOption == null) {
     app.listen(port, () => {
         console.log(`启动成功在端口:${port}`)

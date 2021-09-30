@@ -5,5 +5,9 @@
   "Sql_Server_Port":3306,
   "Sql_Server_Database": "blog",
   "Sql_Server_UserName": "root",
-  "Sql_Server_Password": ""
+  "Sql_Server_Password": "",
+  "Cross_domain":true,
+  "Administrator_account_name": "admin",
+  "Administrator_account_password":"admin",
+  "jwt": "admin"
 }

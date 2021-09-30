@@ -1,21 +1,21 @@
 {
-  "name": "blog",
-  "version": "0.0.1",
+  "name": "web",
+  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "vue": "^3.2.6"
+    "axios": "^0.21.4",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.11",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.6.0",
-    "@vue/compiler-sfc": "^3.0.5",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.1",
-    "vue-tsc": "^0.2.2",
-    "vuex": "^3.6.2"
+    "@vitejs/plugin-vue": "^1.9.2",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.0",
+    "vue-tsc": "^0.3.0"
   }
 }

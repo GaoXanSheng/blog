@@ -1,5 +1,6 @@
 <script lang="ts">
-import axios from "axios";
+import instance from "../api";
+
 export default {
   name: 'PictureHeader',
   props: {
@@ -7,13 +8,15 @@ export default {
   },
   data(){
     return {
-      name:"GaoXuShenG"
+      name:"GaoXuShenG",
+      github:''
     }
   },
   mounted() {
     this.$nextTick(function () {
-      axios.get('http://www.yunmouren.top:8000/admin').then(res=>{
-        this.$data.name = res.data.data
+      instance.instance.get('/settings').then(res=>{
+        this.name=res.data.name
+        this.github = res.data.github
       })
     })
   }
@@ -24,14 +27,14 @@ export default {
       <div class="mdui-img-fluid bg-img">
         <div class="portrait mdui-img-circle">
           <div class="add">
-            <a :href="this.$data.name.github">
+            <a :href="this.github">
               <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple " style="background-color: #ff4081">
                 <i class="mdui-icon material-icons">add</i>
               </button>
             </a>
           </div>
         </div>
-        <h1 class="doc-title mdui-text-color-theme name">{{this.$data.name.name}}</h1>
+        <h1 class="doc-title mdui-text-color-theme name">{{name}}</h1>
       </div>
     </div>
 </template>

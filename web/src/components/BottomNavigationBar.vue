@@ -1,5 +1,5 @@
 <script lang="ts">
-import axios from 'axios'
+import instance from '../api/index'
 export default {
   name: 'bottom',
   props: {
@@ -12,8 +12,8 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
-      axios.get('http://www.yunmouren.top:8000/admin').then(res=>{
-        this.$data.data = res.data.data
+      instance.instance.get('/settings').then(res=>{
+        this.data=res.data
       })
     })
   }
