@@ -99,7 +99,7 @@ router.get('/settings',async (req,res)=>{
 
 
 router.get('/data',async (req,res)=>{
-    connection.query(`SELECT * FROM blog.article`,(err,data)=>{
+    connection.query(`SELECT * FROM blog.article ORDER BY h1 DESC`,(err,data)=>{
         if (err) console.log(err);
         res.send(data)
     })
